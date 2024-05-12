@@ -71,7 +71,7 @@ def count_files(directory):
     print(f'Number of image files {jpg_files}, text files {txt_files}')
 
 # Split data into training and validation sets
-def split_data(directory, train_ratio=0.8):
+def split_data(directory, train_ratio):
 
     train_dir = os.path.join(directory, 'train')
     val_dir = os.path.join(directory, 'val')
@@ -119,7 +119,7 @@ def main(directory):
     json_to_yolo_seg(directory, class_list)
     delete_json_files(directory)
     count_files(directory)
-    split_data(directory)
+    split_data(directory, train_ratio=0.8)
     create_config_with_labels(directory, class_list)
 
 if __name__ == "__main__":
