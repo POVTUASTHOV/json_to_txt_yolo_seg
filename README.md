@@ -25,4 +25,4 @@ The provided Python script performs several tasks:
 To use this tool, simply run the main function with the directory containing your data as an argument:
 
 ```python
-python main.py --directory /path/to/your/data
+python json_to_txt_yolo.py --directory /path/to/your/data
