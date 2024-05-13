@@ -94,10 +94,9 @@ def split_data(directory, train_ratio):
         shutil.move(txt_file, os.path.join(val_dir, os.path.basename(txt_file)))
 
 # Create a configuration file with labels
-def create_config_with_labels(directory, class_list):
-    
-    train_dir = os.path.join(directory, 'train')
-    val_dir = os.path.join(directory, 'val')
+def create_config_with_labels(class_list):
+    train_dir = '../train'
+    val_dir = '../val'
     labels = list(set(class_list))
 
     config = {
@@ -107,7 +106,7 @@ def create_config_with_labels(directory, class_list):
         'names': labels
     }
 
-    with open(os.path.join(directory, 'config.yaml'), 'w') as f:
+    with open('config.yaml', 'w') as f:
         yaml.dump(config, f)
 
     print("Created config.yaml file.")
